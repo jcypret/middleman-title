@@ -13,9 +13,9 @@ Gem::Specification.new do |s|
   s.email       = 'jcypret@gmail.com'
   s.homepage    = 'https://github.com/jcypret/middleman-title'
 
-  spec.files         = `git ls-files`.split($/)
-  # spec.test_files    = `git ls-files -- {features,fixtures}/*`.split($/)
-  spec.require_paths = ['lib']
+  s.files         = `git ls-files`.split($/)
+  # s.test_files    = `git ls-files -- {features,fixtures}/*`.split($/)
+  s.require_paths = ['lib']
 
-  spec.add_dependency 'middleman-core', '~> 3.2'
+  s.add_dependency 'middleman-core', '~> 3.2'
 end
