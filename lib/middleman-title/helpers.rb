@@ -2,21 +2,24 @@ module Middleman
 	module Title
 		module Helpers
 
+
 			def page_title
-				if current_page_title?
-					current_page_title + title_separator + website_title
-				else
-					website_title + title_separator + website_subtitle
-				end
+				title = [current_page_title]
+				title = add_website_name_to_title(title)
+				title.compact.join(title_separator)
 			end
 
 			private
-				def title_separator
-					' &mdash; '
+				def options
+					Title.options
 				end
 
-				def current_page_title?
-					current_page.data.title.present?
+				def website_name
+					options[:name] || nil
+				end
+
+				def title_separator
+					options[:separator] || ' &mdash; '
 				end
 
 				def current_page_title
@@ -27,13 +30,28 @@ module Middleman
 					current_page_title
 				end
 
-				def website_title
-					data.website.title
+				def add_website_name_to_title(title)
+					if website_name_first?
+						title.unshift(website_name)
+					elsif hide_website_name?
+						title
+					else
+						title << website_name
+					end
 				end
 
-				def website_subtitle
-					data.website.subtitle
+				def current_page_title?
+					current_page.data.title.present?
 				end
+
+				def website_name_first?
+					options[:reverse] || current_page.data.title_reverse == true
+				end
+
+				def hide_website_name?
+					current_page.data.title_name == false
+				end
+
 
 		end
 	end
