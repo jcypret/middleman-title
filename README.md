@@ -9,14 +9,14 @@ Add the following line to `Gemfile`, then run `bundle install`:
 
 After installation, activate the extension in `config.rb`:
 
-    activate :title, name: 'Your Website Name', separator: ' — '
+    activate :title, site: 'Your Website Name', separator: ' — '
 
 *The separator is optional and will default to a dash.*
 
 
 ## Adding title to layout and pages
 
-Then in your layout, you can use the `page_title` helper to output the current page title:
+In your layout, you can use the `page_title` helper to output the current page title:
 
     <title><%= page_title %></title>
 
@@ -28,7 +28,7 @@ Then, in your the Frontmatter of your template just add a title:
 
 This would output:
 
-    The title of this page goes here — Your Website Name
+    Your Website Name — The title of this page goes here
 
 ## Outputting Website Name First
 
