@@ -23,7 +23,11 @@ module Middleman
         end
 
         def title_reverse
-          current_page.data.title_reverse || options[:reverse]
+          if current_page.data.title_reverse == false
+            false
+          else
+            current_page.data.title_reverse || options[:reverse]
+          end
         end
 
         def page_name
@@ -37,7 +41,7 @@ module Middleman
         end
 
         def add_website_name_to_title(title)
-          if website_name.nil? || current_page.data.title_site == false
+          if current_page.data.title_site == false || website_name.nil?
             title
           elsif website_name_first?
             title.unshift(website_name)

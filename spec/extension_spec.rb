@@ -30,6 +30,17 @@ describe Middleman::Title::Helpers do
           expect(h.page_title).to eq 'How to Say Hello to the World &mdash; Website Name'
         end
 
+        it 'puts website name first when activate reverse is true' do
+          h.stub(:options) { { site: 'Website Name', reverse: true } }
+          expect(h.page_title).to eq 'Website Name &mdash; How to Say Hello to the World'
+        end
+
+        it 'puts website name last when activate reverse is true but frontmatter is false' do
+          h.stub(:options) { { site: 'Website Name', reverse: true } }
+          h.stub_chain(:current_page, :data, :title_reverse).and_return(false)
+          expect(h.page_title).to eq 'How to Say Hello to the World &mdash; Website Name'
+        end
+
         context 'separator is set' do
           it 'to a vertical bar' do
             h.stub(:options) { { site: 'Website Name', separator: ' | ' } }
