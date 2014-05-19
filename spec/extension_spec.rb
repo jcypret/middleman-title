@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'byebug'
 
 describe Middleman::Title::Helpers do
 	let(:h) { Class.new { extend Middleman::Title::Helpers } }
