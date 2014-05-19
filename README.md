@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/jcypret/middleman-title.svg?branch=master)](https://travis-ci.org/jcypret/middleman-title)
 
 # Middleman Title
+[![Build Status](https://travis-ci.org/jcypret/middleman-title.svg?branch=master)](https://travis-ci.org/jcypret/middleman-title)
 
 This Middleman extension allows you to easily set page titles for your website.
 
@@ -16,7 +16,7 @@ After installation, activate the extension in `config.rb`:
 *The separator is optional and will default to a dash.*
 
 
-## Adding title to layout and pages
+## Setting Title and Adding to Layout
 
 In your layout file, you can use the `page_title` helper to output the current page title:
 
@@ -60,7 +60,7 @@ Then on any page where you want the website name to come last, you can set `titl
 
 ## Multi-level Page Titles
 
-When your website has heirachy, it is sometimes desirable to have multiple parts to the title, such as a category. This can be done by passing an array in the Frontmatter:
+When your website has heirachy, it is sometimes desirable to have multiple parts to the title. This can be done by passing an array in the Frontmatter:
 
     ---
     title:
