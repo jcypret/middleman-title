@@ -43,6 +43,13 @@ describe Middleman::Title::Helpers do
 						expect(h.page_title).to eq 'How to Say Hello to the World'
 					end
 				end
+
+				context 'page name is an array' do
+					it 'joins page name with separator' do
+						h.stub_chain(:current_page, :data, :title).and_return(['John Doe', 'Staff'])
+						expect(h.page_title).to eq 'John Doe &mdash; Staff &mdash; Website Name'
+					end
+				end
 			end
 
 			context 'page name is not set' do
@@ -50,7 +57,6 @@ describe Middleman::Title::Helpers do
 					expect(h.page_title).to eq 'Website Name'
 				end
 			end
-
 		end
 
 		context 'website name is not set' do
