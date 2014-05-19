@@ -14,7 +14,6 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     diff-lcs (1.2.5)
-    dot_hash (0.5.9)
     erubis (2.7.0)
     ffi (1.9.3)
     hooks (0.4.0)
@@ -70,6 +69,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  dot_hash
   middleman-title!
   rspec

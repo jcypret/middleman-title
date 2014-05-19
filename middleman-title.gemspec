@@ -20,5 +20,4 @@ Gem::Specification.new do |s|
   s.add_dependency 'middleman-core', '~> 3.2'
 
   s.add_development_dependency 'rspec'
-  s.add_development_dependency 'dot_hash'
 end
