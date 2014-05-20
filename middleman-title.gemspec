@@ -9,6 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Justin Cypret']
   spec.email         = ['jcypret@gmail.com']
   spec.summary       = 'A Middleman extension for setting the page title'
+  spec.description   = 'A Middleman extension for setting the page title'
   spec.homepage      = 'https://github.com/jcypret/middleman-title'
   spec.license       = 'MIT'
 
@@ -20,6 +21,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'middleman-core', '~> 3.2'
 
   spec.add_development_dependency 'bundler', '~> 1.6'
-  spec.add_development_dependency 'rake', '~> 10.3.1'
-  spec.add_development_dependency 'rspec', '~> 2.14.1'
+  spec.add_development_dependency 'rake', '~> 10.3', '>= 10.3.1'
+  spec.add_development_dependency 'rspec', '~> 2.14', '>= 2.14.1'
 end
