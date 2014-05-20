@@ -1,6 +1,6 @@
-
 # Middleman Title
 [![Build Status](https://travis-ci.org/jcypret/middleman-title.svg?branch=master)](https://travis-ci.org/jcypret/middleman-title)
+[![Code Climate](https://codeclimate.com/github/jcypret/middleman-title.png)](https://codeclimate.com/github/jcypret/middleman-title)
 
 This Middleman extension allows you to easily set page titles for your website.
 
