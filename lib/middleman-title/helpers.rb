@@ -11,7 +11,7 @@ module Middleman
 
       private
         def options
-          Title.options
+          ::Middleman::Title.options
         end
 
         def website_name
