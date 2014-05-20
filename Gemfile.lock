@@ -72,5 +72,5 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.6)
   middleman-title!
-  rake (~> 10.3, >= 10.3.1)
-  rspec (~> 2.14, >= 2.14.1)
+  rake (~> 10.3)
+  rspec (~> 2.14)
