@@ -58,10 +58,6 @@ module Middleman
           title_reverse
         end
 
-        def hide_website_name?
-          current_page.data.title_site == false
-        end
-
     end
   end
 end
