@@ -3,21 +3,23 @@ lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'middleman-title/version'
 
-Gem::Specification.new do |s|
-  s.name        = 'middleman-title'
-  s.version     = Middleman::Title::VERSION
-  s.license     = 'MIT'
-  s.summary     = 'A Middleman extension for setting the page title'
-  s.description = 'A Middleman extension for setting the page title'
-  s.author      = 'Justin Cypret'
-  s.email       = 'jcypret@gmail.com'
-  s.homepage    = 'https://github.com/jcypret/middleman-title'
+Gem::Specification.new do |spec|
+  spec.name          = 'middleman-title'
+  spec.version       = Middleman::Title::VERSION
+  spec.authors       = ['Justin Cypret']
+  spec.email         = ['jcypret@gmail.com']
+  spec.summary       = 'A Middleman extension for setting the page title'
+  spec.homepage      = 'https://github.com/jcypret/middleman-title'
+  spec.license       = 'MIT'
 
-  s.files         = `git ls-files`.split($/)
-  # s.test_files    = `git ls-files -- {features,fixtures}/*`.split($/)
-  s.require_paths = ['lib']
+  spec.files         = `git ls-files -z`.split("\x0")
+  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.require_paths = ['lib']
 
-  s.add_dependency 'middleman-core', '~> 3.2'
+  spec.add_dependency 'middleman-core', '~> 3.2'
 
-  s.add_development_dependency 'rspec'
+  spec.add_development_dependency 'bundler', '~> 1.6'
+  spec.add_development_dependency 'rake'
+  spec.add_development_dependency 'rspec'
 end
