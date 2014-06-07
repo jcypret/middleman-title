@@ -5,13 +5,17 @@ describe Middleman::Title::Helpers do
 
   describe '#page_title' do
     before(:each) do
+      h.stub_chain(:options, :site).and_return(false)
+      h.stub_chain(:options, :separator).and_return(' &mdash; ')
+      h.stub_chain(:options, :reverse).and_return(false)
+
       h.stub_chain(:current_page, :data, :title).and_return(nil)
       h.stub_chain(:current_page, :data, :title_site).and_return(nil)
       h.stub_chain(:current_page, :data, :title_reverse).and_return(nil)
     end
 
     context 'website name is set' do
-      before(:each) { h.stub(:options) { { site: 'Website Name' } } }
+      before(:each) { h.stub_chain(:options, :site).and_return('Website Name') }
 
       context 'page name is set' do
         before(:each) { h.stub_chain(:current_page, :data, :title).and_return('How to Say Hello to the World') }
@@ -31,19 +35,20 @@ describe Middleman::Title::Helpers do
         end
 
         it 'puts website name first when activate reverse is true' do
-          h.stub(:options) { { site: 'Website Name', reverse: true } }
+          h.stub_chain(:options, :reverse).and_return(true)
           expect(h.page_title).to eq 'Website Name &mdash; How to Say Hello to the World'
         end
 
         it 'puts website name last when activate reverse is true but frontmatter is false' do
-          h.stub(:options) { { site: 'Website Name', reverse: true } }
+          h.stub_chain(:options, :reverse).and_return(true)
           h.stub_chain(:current_page, :data, :title_reverse).and_return(false)
           expect(h.page_title).to eq 'How to Say Hello to the World &mdash; Website Name'
         end
 
         context 'separator is set' do
           it 'to a vertical bar' do
-            h.stub(:options) { { site: 'Website Name', separator: ' | ' } }
+            h.stub_chain(:options, :site).and_return('Website Name')
+            h.stub_chain(:options, :separator).and_return(' | ')
             expect(h.page_title).to eq 'How to Say Hello to the World | Website Name'
           end
         end
@@ -71,7 +76,6 @@ describe Middleman::Title::Helpers do
     end
 
     context 'website name is not set' do
-      before(:each) { h.stub(:options) { {} } }
 
       context 'page name is set' do
         before(:each) { h.stub_chain(:current_page, :data, :title).and_return('How to Say Hello to the World') }

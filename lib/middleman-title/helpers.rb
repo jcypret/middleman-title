@@ -10,23 +10,23 @@ module Middleman
       end
 
       private
-        def options
+        def title_options
           ::Middleman::Title.options
         end
 
         def website_name
-          current_page.data.title_site || options[:site]
+          current_page.data.title_site || title_options.site
         end
 
         def title_separator
-          options[:separator] || ' &mdash; '
+          title_options.separator
         end
 
         def title_reverse
-          if current_page.data.title_reverse == false
-            false
+          if current_page.data.title_reverse.nil? == false
+            current_page.data.title_reverse
           else
-            current_page.data.title_reverse || options[:reverse]
+            title_options.reverse
           end
         end
 
@@ -41,7 +41,7 @@ module Middleman
         end
 
         def add_website_name_to_title(title)
-          if current_page.data.title_site == false || website_name.nil?
+          if current_page.data.title_site == false || website_name == false
             title
           elsif website_name_first?
             title.unshift(website_name)
