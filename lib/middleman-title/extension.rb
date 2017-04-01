@@ -1,3 +1,4 @@
+require 'middleman-core'
 require 'middleman-title/helpers'
 
 module Middleman
