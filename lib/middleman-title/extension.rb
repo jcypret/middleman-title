@@ -10,6 +10,11 @@ module Middleman
 
     def initialize(app, options_hash={}, &block)
       super
+      ::Middleman::TitleExtension.class_variable_set(:@@options, options)
+    end
+
+    def self.options
+      @@options
     end
   end
 end
