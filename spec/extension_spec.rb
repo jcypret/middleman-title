@@ -12,6 +12,7 @@ describe Middleman::Title::Helpers do
       h.stub_chain(:current_page, :data, :title).and_return(nil)
       h.stub_chain(:current_page, :data, :title_site).and_return(nil)
       h.stub_chain(:current_page, :data, :title_reverse).and_return(nil)
+      h.stub_chain(:current_page, :data, :page_title).and_return(nil)
     end
 
     context 'website name is set' do
@@ -91,6 +92,14 @@ describe Middleman::Title::Helpers do
         end
       end
 
+    end
+
+    context 'page_title is set' do
+      before(:each) { h.stub_chain(:current_page, :data, :page_title).and_return('This takes precedence') }
+
+      it 'returns page_title specified for the current page' do
+        expect(h.page_title).to eq 'This takes precedence'
+      end
     end
 
   end

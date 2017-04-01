@@ -3,6 +3,9 @@ module Middleman
     module Helpers
 
       def page_title
+        cur_page_title = current_page.data.page_title
+        return cur_page_title unless cur_page_title.nil?
+
         title = []
         title = add_page_name_to_title(title)
         title = add_website_name_to_title(title)
