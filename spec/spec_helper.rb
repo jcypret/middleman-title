@@ -1,5 +1,5 @@
-require 'simplecov'
-SimpleCov.start
+require 'codacy-coverage'
+Codacy::Reporter.start
 
 require 'bundler/setup'
 Bundler.setup
