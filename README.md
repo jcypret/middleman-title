@@ -1,7 +1,8 @@
 # Middleman Title
 [![Build Status](https://travis-ci.org/jcypret/middleman-title.svg?branch=master)](https://travis-ci.org/jcypret/middleman-title)
 [![Gem Version](https://badge.fury.io/rb/middleman-title.svg)](https://badge.fury.io/rb/middleman-title)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3a4898c9e6d746c9a02f02c25496b8c9)](https://www.codacy.com/app/jcypret/middleman-title?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jcypret/middleman-title&amp;utm_campaign=Badge_Grade)
+[![Code Climate](https://codeclimate.com/github/jcypret/middleman-title/badges/gpa.svg)](https://codeclimate.com/github/jcypret/middleman-title)
+[![Test Coverage](https://codeclimate.com/github/jcypret/middleman-title/badges/coverage.svg)](https://codeclimate.com/github/jcypret/middleman-title/coverage)
 
 This Middleman extension allows you to easily set page titles for your website.
 

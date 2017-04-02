@@ -1,11 +1,14 @@
 language: ruby
 cache: bundler
 before_install:
-- gem update bundler
+  - gem update bundler
 rvm:
-- 2.3.0
-- 2.2.0
-- 2.1.0
-- 2.0.0
-env:
-  CODACY_PROJECT_TOKEN: de98943d69f24e669127e432e59eb82b
+  - 2.3.0
+  - 2.2.0
+  - 2.1.0
+  - 2.0.0
+addons:
+  code_climate:
+    repo_token: 96d351848c244b986b3888fd13d12b6e916dcfbc83474c8a7a2c03d1c7827ecf
+after_success:
+  - bundle exec codeclimate-test-reporter
