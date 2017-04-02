@@ -93,6 +93,14 @@ This would output:
 John Doe — Staff — Your Website Name
 ```
 
+## Override Page Title
+
+If at any point you want to completely override the page title, you can use `page_title` in the Frontmatter.
+
+```YAML
+page_title: The title of a page to be used as-is in <title> without site name
+```
+
 ## Contributing
 
 1. Fork it ( https://github.com/jcypret/middleman-title/fork )

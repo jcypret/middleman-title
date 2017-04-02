@@ -1,6 +1,7 @@
 ## 1.0.0 (2017-04-01)
-* Add compatibility with Middleman v4
-* Upgrade plugin to use the Middleman extension API
+* Add compatibility with Middleman v4 (#2)
+* Upgrade plugin to use the Middleman extension API (#2)
+* Allow overriding individual page titles (#3)
 
 ## 0.0.3
 * Fix Rspec stub name for title_options
