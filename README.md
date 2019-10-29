@@ -1,5 +1,5 @@
 # Middleman Title
-[![Build Status](https://travis-ci.org/jcypret/middleman-title.svg?branch=master)](https://travis-ci.org/jcypret/middleman-title)
+![Build Status](https://github.com/jcypret/middleman-title/workflows/build/badge.svg?branch=master)
 [![Gem Version](https://badge.fury.io/rb/middleman-title.svg)](https://badge.fury.io/rb/middleman-title)
 [![Code Climate](https://codeclimate.com/github/jcypret/middleman-title/badges/gpa.svg)](https://codeclimate.com/github/jcypret/middleman-title)
 [![Test Coverage](https://codeclimate.com/github/jcypret/middleman-title/badges/coverage.svg)](https://codeclimate.com/github/jcypret/middleman-title/coverage)
